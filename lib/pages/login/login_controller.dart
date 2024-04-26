@@ -7,7 +7,7 @@ class LoginController extends GetxController{
     TextEditingController userController = TextEditingController();
     TextEditingController passController = TextEditingController();
     RxString message = 'primer mensaje'.obs;
-    Rx<MaterialColor> messageColor = Colors.yellow.obs;
+    var messageColor = Colors.yellow.obs;
 
     void login(){
         print('hola desde el controlador');
@@ -17,9 +17,11 @@ class LoginController extends GetxController{
         String password = passController.text;
         if(user == 'admin' && password == '123'){
             message.value ='Usuario correcto';
+            messageColor.value = Colors.green;
         }
         else {
             message.value = 'Usuario incorrecto';
+            messageColor.value = Colors.red;
         }
 
         // Que el mensaje desaparezca luego de 5 segundos

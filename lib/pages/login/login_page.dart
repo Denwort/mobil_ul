@@ -160,7 +160,13 @@ class LoginPage extends StatelessWidget {
             ),
           ),
         ),
-        Obx(()=> Text(control.message.value)),
+        Obx(()=> Text(control.message.value,
+            style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: control.messageColor.value,
+            ),
+        )),
 
         SizedBox(
           width: double.infinity, // Ocupar todo el ancho disponible
